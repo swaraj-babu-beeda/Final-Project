@@ -55,7 +55,3 @@ The project leverages **Quantum Computing (PennyLane framework)** integrated wit
 - Achieved **promising accuracy** for 4-class retinal disease classification.  
 - Demonstrated the **feasibility of quantum–classical hybrid models** in medical imaging tasks.  
 - Quantum layers provided **additional interpretability** and enhanced learning capabilities.  
-
----
-
-## 📂 Repository Structure  
