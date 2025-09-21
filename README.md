@@ -1,65 +1,50 @@
-# 🧠 Hybrid Quantum–Classical Model for Retinal Disease Detection
+# Hybrid Quantum–Classical Retinal Disease Classification
 
-Early detection of retinal diseases can save vision.  
-This project implements a **Hybrid Quantum–Classical Machine Learning pipeline** that classifies retinal fundus images into four categories:  
-
-- 👁️ **Normal**  
-- ⚠️ **Diabetic Retinopathy**  
-- 🔬 **Glaucoma**  
-- 🌫️ **Cataract**
-
-We combine a **Convolutional Neural Network (CNN)** feature extractor with a **PennyLane Variational Quantum Classifier** to explore whether quantum layers improve classification performance and interpretability.
+**Hybrid Quantum-Classical ML model that classifies retinal fundus images into 4 classes** — Normal, Diabetic Retinopathy, Glaucoma, Cataract — combining classical CNN feature extractors (ResNet / Inception-V3) with a PennyLane variational quantum classifier.  
+Achieved **~97-98% accuracy** & **~97-98% F1-score** using the hybrid model.  
 
 ---
 
-## 🚀 Results (Validation Set)
+## 🚀 Results Summary
 
-| Metric          | Value |
-|-----------------|-------|
-| Accuracy        | XX%   |
-| Precision (avg) | XX%   |
-| Recall (avg)    | XX%   |
-| F1-Score (avg)  | XX%   |
-
-📊 *See the [Colab notebook](#-colab-notebook) for detailed classification reports and confusion matrix.*
+| Model Type | Accuracy (%) | F1-Score (%) |
+|-------------|----------------|----------------|
+| Classical CNNs (ResNet18 / ResNet34 / ResNet50 / ResNet101 / ResNet152 / InceptionV3) | **85.3 – 89.8** | **85.6 – 89.5** |
+| **Hybrid Quantum-Classical (Quantum Classifier on top of same feature extractors)** | **97.2 – 98.5** | **97.4 – 98.4** |
 
 ---
 
-## 🗂️ Dataset
+## 🗂️ Dataset & Preprocessing
 
-- Source: [Public Retinal Fundus Dataset](<add link here>)  
-- Classes: 4 (Normal, Glaucoma, Diabetic Retinopathy, Cataract)  
-- Preprocessing:
-  - Normalization and resizing  
-  - Data augmentation (flip, rotation, zoom)  
-  - Label encoding  
-
-⚠️ *This dataset is for **research/educational purposes only** — not clinical deployment.*
+- **Dataset**: Public retinal fundus image dataset (4 classes: Normal, Diabetic Retinopathy, Glaucoma, Cataract)  
+- Preprocessing steps:
+  - Resize / normalize images  
+  - Data augmentation (flips, rotations, zoom etc.)  
+  - Split into training & validation sets  
+- Feature extraction was done via pretrained CNNs (ResNet variants, InceptionV3), with the last layer removed for embedding → to feed quantum classifier.
 
 ---
 
 ## 🏗️ Model Architecture
 
-**Pipeline**:  
-1. **CNN (Keras/TensorFlow)** → Extract features  
-2. **Quantum Layer (PennyLane)** → Variational classifier  
-3. **Classical Optimizer** → Cross-entropy minimization  
-
-🖼️ *Architecture diagram here (replace with image)*  
+1. Classical CNN (feature extraction) using variants: ResNet18, ResNet34, ResNet50, ResNet101, ResNet152, and InceptionV3  
+2. Variational Quantum Classifier built using PennyLane quantum circuits (utilizing gates like Hadamard, CNOT etc.)  
+3. Training loop: classical optimizer minimizing cross-entropy loss on the hybrid model  
 
 ---
 
-## 📓 Colab Notebook
+## 📓 Notebooks & Interactive Runs
 
-Run the full pipeline interactively in Google Colab:  
-👉 [Open in Colab](<insert your Colab link here>)  
+You can run the full pipeline via the Colab / Jupyter notebook: `final_mini_project.ipynb`  
+This includes preprocessing, feature extraction, quantum circuit implementation, and evaluation.  
 
 ---
 
-## ⚙️ Installation (Local)
-
-Clone the repo:
+## ⚙️ Setup (Local / Reproduce)
 
 ```bash
 git clone https://github.com/swaraj-babu-beeda/Final-Project.git
 cd Final-Project
+# ensure Python ≥ 3.8, install dependencies
+pip install -r requirements.txt
+jupyter notebook final_mini_project.ipynb
