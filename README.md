@@ -49,11 +49,17 @@ The hybrid quantum-classical model achieved **high performance** on the dataset:
 
 ## 📊 Key Visuals
 
-*(Add images in an `images/` folder and reference them here)*
+Here are some visual highlights of the project:
 
-- **Confusion Matrix**: ![Confusion Matrix](images/confusion_matrix.png)  
-- **Sample Predictions**: ![Sample Predictions](images/sample_predictions.png)  
-- **Training Curves / Accuracy-Loss Plots**: *(optional visual)*  
+- **Confusion Matrix**  
+  ![Confusion Matrix](images/confusion_matrix.png)
+
+- **Sample Predictions**  
+  ![Sample Predictions](images/sample_predictions.png)
+
+- **Training Curves / Accuracy-Loss Plots** *(optional)*  
+  ![Training Curves](images/training_curves.png)
+
 
 ---
 
