@@ -1,62 +1,65 @@
-# 🩺 Multiclass Classification of Retinal Diseases using Quantum Computing
+# 🧠 Hybrid Quantum–Classical Model for Retinal Disease Detection
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/swaraj-babu-beeda/Final-Project/blob/main/final_mini_project.ipynb)
+Early detection of retinal diseases can save vision.  
+This project implements a **Hybrid Quantum–Classical Machine Learning pipeline** that classifies retinal fundus images into four categories:  
 
-## 📌 Project Overview  
-This project focuses on **automated retinal disease classification** using a **hybrid Quantum–Classical Machine Learning** approach.  
-The system classifies **retinal fundus images** into four categories:  
+- 👁️ **Normal**  
+- ⚠️ **Diabetic Retinopathy**  
+- 🔬 **Glaucoma**  
+- 🌫️ **Cataract**
 
-- 👁 **Glaucoma**  
-- 👁‍🗨 **Normal**  
-- 👁‍🗨 **Diabetic Retinopathy**  
-- 👁‍🗨 **Cataract**  
-
-The project leverages **Quantum Computing (PennyLane framework)** integrated with **Convolutional Neural Networks (CNNs)** to enhance accuracy and explore the potential of **quantum-enhanced machine learning** in medical imaging.
+We combine a **Convolutional Neural Network (CNN)** feature extractor with a **PennyLane Variational Quantum Classifier** to explore whether quantum layers improve classification performance and interpretability.
 
 ---
 
-## 🚀 Motivation  
-- Retinal diseases are a **leading cause of vision loss worldwide**.  
-- **Early and accurate detection** is crucial for effective treatment.  
-- While **classical deep learning methods** perform well, **quantum computing** opens new opportunities for improved pattern recognition.  
-- This project bridges **quantum algorithms** with **traditional ML** to address a **real-world medical challenge**.  
+## 🚀 Results (Validation Set)
+
+| Metric          | Value |
+|-----------------|-------|
+| Accuracy        | XX%   |
+| Precision (avg) | XX%   |
+| Recall (avg)    | XX%   |
+| F1-Score (avg)  | XX%   |
+
+📊 *See the [Colab notebook](#-colab-notebook) for detailed classification reports and confusion matrix.*
 
 ---
 
-## 🛠 Tech Stack  
-- **Languages**: Python  
-- **Frameworks**:  
-  - TensorFlow / Keras (for CNN)  
-  - PennyLane (for Quantum ML)  
-- **Tools**: Google Colab, NumPy, Matplotlib, Scikit-learn  
-- **Dataset**: Publicly available retinal fundus images dataset  
+## 🗂️ Dataset
+
+- Source: [Public Retinal Fundus Dataset](<add link here>)  
+- Classes: 4 (Normal, Glaucoma, Diabetic Retinopathy, Cataract)  
+- Preprocessing:
+  - Normalization and resizing  
+  - Data augmentation (flip, rotation, zoom)  
+  - Label encoding  
+
+⚠️ *This dataset is for **research/educational purposes only** — not clinical deployment.*
 
 ---
 
-## ⚙ Methodology  
-### 🔹 Data Preprocessing  
-- Image normalization, resizing, and augmentation  
-- Label encoding for 4 classes  
+## 🏗️ Model Architecture
 
-### 🔹 Feature Extraction  
-- Convolutional Neural Networks (CNNs) for feature learning  
+**Pipeline**:  
+1. **CNN (Keras/TensorFlow)** → Extract features  
+2. **Quantum Layer (PennyLane)** → Variational classifier  
+3. **Classical Optimizer** → Cross-entropy minimization  
 
-### 🔹 Quantum Layer Integration  
-- Quantum circuits built using **PennyLane**  
-- Variational quantum classifier applied on extracted features  
-
-### 🔹 Model Training & Evaluation  
-- Hybrid quantum–classical optimization  
-- Metrics: Accuracy, Confusion Matrix, Classification Report  
+🖼️ *Architecture diagram here (replace with image)*  
 
 ---
 
-## 📊 Results  
-- Achieved **promising accuracy** for 4-class retinal disease classification.  
-- Demonstrated the **feasibility of quantum–classical hybrid models** in medical imaging tasks.  
-- Quantum layers provided **additional interpretability** and enhanced learning capabilities.  
+## 📓 Colab Notebook
+
+Run the full pipeline interactively in Google Colab:  
+👉 [Open in Colab](<insert your Colab link here>)  
 
 ---
 
-## 📜 License  
-This project is licensed under the [MIT License](LICENSE).  
+## ⚙️ Installation (Local)
+
+Clone the repo:
+
+```bash
+git clone https://github.com/swaraj-babu-beeda/Final-Project.git
+cd Final-Project
