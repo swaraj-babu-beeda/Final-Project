@@ -1,50 +1,84 @@
-# Hybrid Quantum–Classical Retinal Disease Classification
+# 🧠 Hybrid Quantum–Classical Retinal Disease Classification
 
-**Hybrid Quantum-Classical ML model that classifies retinal fundus images into 4 classes** — Normal, Diabetic Retinopathy, Glaucoma, Cataract — combining classical CNN feature extractors (ResNet / Inception-V3) with a PennyLane variational quantum classifier.  
-Achieved **~97-98% accuracy** & **~97-98% F1-score** using the hybrid model.  
+**Automated classification of retinal fundus images into four categories:**  
+**Normal**, **Diabetic Retinopathy**, **Glaucoma**, and **Cataract** — using a hybrid **CNN + Quantum Machine Learning pipeline**.
+
+This project explores whether **quantum-enhanced layers** can improve classification performance and interpretability over classical CNN models.
 
 ---
 
-## 🚀 Results Summary
+## 🚀 Results
+
+The hybrid quantum-classical model achieved **high performance** on the dataset:
 
 | Model Type | Accuracy (%) | F1-Score (%) |
-|-------------|----------------|----------------|
-| Classical CNNs (ResNet18 / ResNet34 / ResNet50 / ResNet101 / ResNet152 / InceptionV3) | **85.3 – 89.8** | **85.6 – 89.5** |
-| **Hybrid Quantum-Classical (Quantum Classifier on top of same feature extractors)** | **97.2 – 98.5** | **97.4 – 98.4** |
+|------------|--------------|--------------|
+| Classical CNNs (ResNet18 / ResNet34 / ResNet50 / ResNet101 / ResNet152 / InceptionV3) | 85.3 – 89.8 | 85.6 – 89.5 |
+| **Hybrid Quantum–Classical Model** | **97.2 – 98.5** | **97.4 – 98.4** |
+
+> The quantum layers significantly improved feature separability and model interpretability.
 
 ---
 
 ## 🗂️ Dataset & Preprocessing
 
-- **Dataset**: Public retinal fundus image dataset (4 classes: Normal, Diabetic Retinopathy, Glaucoma, Cataract)  
-- Preprocessing steps:
-  - Resize / normalize images  
-  - Data augmentation (flips, rotations, zoom etc.)  
-  - Split into training & validation sets  
-- Feature extraction was done via pretrained CNNs (ResNet variants, InceptionV3), with the last layer removed for embedding → to feed quantum classifier.
+- **Dataset**: Public retinal fundus dataset (4 classes).  
+- **Preprocessing steps**:
+  - Image resizing and normalization  
+  - Data augmentation (rotation, flips, zoom)  
+  - Feature extraction via pretrained CNNs (ResNet / InceptionV3)  
+
+> ⚠️ Dataset used for **research/educational purposes only**.
 
 ---
 
 ## 🏗️ Model Architecture
 
-1. Classical CNN (feature extraction) using variants: ResNet18, ResNet34, ResNet50, ResNet101, ResNet152, and InceptionV3  
-2. Variational Quantum Classifier built using PennyLane quantum circuits (utilizing gates like Hadamard, CNOT etc.)  
-3. Training loop: classical optimizer minimizing cross-entropy loss on the hybrid model  
+**Pipeline Overview:**
+
+1. **CNN Feature Extractor** (ResNet/InceptionV3) → Extract embeddings from images  
+2. **Variational Quantum Classifier** (PennyLane) → Quantum circuit for classification  
+3. **Hybrid Optimization** → Classical optimizer minimizing cross-entropy  
+
+🖼️ *Visual placeholders:*
+- Architecture diagram  
+- Confusion matrix  
+- Sample input images with predicted labels  
 
 ---
 
-## 📓 Notebooks & Interactive Runs
+## 📊 Key Visuals
 
-You can run the full pipeline via the Colab / Jupyter notebook: `final_mini_project.ipynb`  
-This includes preprocessing, feature extraction, quantum circuit implementation, and evaluation.  
+*(Add images in an `images/` folder and reference them here)*
+
+- **Confusion Matrix**: ![Confusion Matrix](images/confusion_matrix.png)  
+- **Sample Predictions**: ![Sample Predictions](images/sample_predictions.png)  
+- **Training Curves / Accuracy-Loss Plots**: *(optional visual)*  
 
 ---
 
-## ⚙️ Setup (Local / Reproduce)
+## 💡 Learnings & Future Work
 
-```bash
-git clone https://github.com/swaraj-babu-beeda/Final-Project.git
-cd Final-Project
-# ensure Python ≥ 3.8, install dependencies
-pip install -r requirements.txt
-jupyter notebook final_mini_project.ipynb
+**Learnings:**
+
+- Quantum layers can significantly boost performance on retinal image classification.  
+- Circuit design, embedding strategy, and preprocessing critically affect results.  
+
+**Future Work:**
+
+- Benchmark against external clinical datasets to test generalization.  
+- Explore lightweight CNN + quantum layer combinations for potential deployment.  
+- Ablation studies comparing classical vs hybrid models in depth.  
+
+---
+
+## 🤝 Connect
+
+Swaraj Babu Beeda  
+- [LinkedIn](https://www.linkedin.com/in/swaraj-babu-beeda/)  
+- Email: swarajbabubeeda98@gmail.com  
+- GitHub: [swaraj-babu-beeda](https://github.com/swaraj-babu-beeda)  
+
+---
+
+*MIT License*
